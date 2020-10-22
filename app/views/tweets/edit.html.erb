@@ -1,0 +1,9 @@
+<div class="contents row">
+  <div class="container">
+    <h3>編集する</h3>
+    <%= form_with(model: @tweet, local: true) do |form| %>
+      <%= form.text_area :thought, placeholder: "text", rows: "10" %>
+      <%= form.submit "SEND" %>
+    <% end %>
+  </div>
+</div>
