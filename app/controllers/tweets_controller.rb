@@ -1,4 +1,5 @@
 class TweetsController < ApplicationController
+  before_action :move_to_index, except: [:index]
   def index
     @tweets = Tweet.all
   end
@@ -26,7 +27,7 @@ class TweetsController < ApplicationController
   end
 
   private
-  
+
   def tweet_params
     params.require(:tweet).permit(:thought)
   end
