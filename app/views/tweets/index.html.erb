@@ -12,9 +12,11 @@
           </li>
         </ul>
       </div>
-      <p><%= tweet.text %></p>
+      <p><%= tweet.thought %></p>
       <span class="thought">
-        <%= tweet.thought %>
+        <a href="">
+          <span>投稿者</span><%= tweet.user.nickname %>
+        </a>
       </span>
     </div>
   <% end %>
