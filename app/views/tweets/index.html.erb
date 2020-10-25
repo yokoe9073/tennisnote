@@ -4,12 +4,14 @@
       <div class="more">
         <span><%= image_tag 'arrow_top.png' %></span>
         <ul class="more_list">
-          <li>
-            <%= link_to '編集', edit_tweet_path(tweet.id), method: :get %>
-          </li>
-          <li>
-            <%= link_to '削除', tweet_path(tweet.id), method: :delete %>
-          </li>
+          <% if user_signed_in? && current_user.id == tweet.user_id %>
+            <li>
+              <%= link_to '編集', edit_tweet_path(tweet.id), method: :get %>
+            </li>
+            <li>
+              <%= link_to '削除', tweet_path(tweet.id), method: :delete %>
+            </li>
+          <% end %>
         </ul>
       </div>
       <p><%= tweet.thought %></p>
